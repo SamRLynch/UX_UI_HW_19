@@ -1,0 +1,159 @@
+@import 'css_reset';
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@300;400;700&family=Courier+Prime&family=Lato:wght@400;700&display=swap');
+
+/* ----------------------------------------- */
+/* ---------------- Variables  ------------- */
+/* ----------------------------------------- */
+$header_font: 'Lato',
+sans-serif;
+$body_font: 'Aleo',
+serif;
+$code_font: 'Courier Prime',
+monospace;
+
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+$white: #F5FBFF;
+$black: #000000;
+$blue: #4085D0;
+$light_blue: #64A5EE;
+$green: #61936F;
+$light_green: #7FAE8C;
+$purple: #92608C;
+$light_purple: #AF7EA9;
+$orange: #D07440;
+$light_orange: #EC8A53;
+$main_gradient: linear-gradient(105.44deg, #4085D0 0%, #7E4477 100%);
+$blue_gradient: linear-gradient(105.44deg, #4085D0 0%, #2A73C3 100%);
+$dark_blue_gradient: linear-gradient(96.82deg, #2D74C1 1.2%, #1762B3 100.89%);
+$green_gradient: linear-gradient(105.44deg, #61936F 0%, #478258 100%);
+$dark_green_gradient: linear-gradient(96.82deg, #447B54 1.2%, #2B683C 100.89%);
+$purple_gradient: linear-gradient(112.03deg, #92608C 0%, #7E4477 100%);
+$dark_purple_gradient: linear-gradient(96.82deg, #794273 1.2%, #65295E 100.89%);
+$orange_gradient: linear-gradient(105.44deg, #D07440 0%, #C2622C 100%);
+
+$code_gray: rgba(242, 242, 242, 1);
+
+
+body {
+    background-color: #F5FBFF;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button {
+    font-family: $header_font;
+    font-size: 14pt;
+    color: $black;
+    width: 220px;
+    height: 54px;
+    line-height: 54px;
+    text-align: center;
+    border-radius: 18px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px #99BDD5, inset 2px 2px 4px rgba(220, 233, 241, 0.75), inset -8px -8px 12px #DCE9F1;
+    margin-bottom: 2em;
+    transition: all 0.3s ease 0s;
+    &:hover {
+    	box-shadow: 0px 10px 20px #99BDD5, inset 2px 2px 4px rgba(170, 197, 215, 0.75), inset -8px -8px 12px rgba(170, 197, 215, 0.7);
+    }
+    &.blue {
+        color: $white;
+        background: #64A5EE;
+        box-shadow: 0px 10px 20px rgba(37, 98, 167, 0.5), inset 2px 2px 4px rgba(64, 133, 208, 0.75), inset -8px -8px 12px #4085D0;
+
+        &:hover {
+            background: linear-gradient(93.2deg, #64A5EE 3.44%, #64A5EE 100.8%);
+            box-shadow: 0px 10px 20px rgba(42, 114, 194, 0.5), inset 2px 2px 4px rgba(36, 103, 175, 0.75), inset -8px -8px 12px #1F68B8;
+        }
+
+        &.blue_02:hover {
+            background: linear-gradient(93.2deg, #4085D0 3.44%, #2A73C3 100.8%);
+            box-shadow: 0px 10px 20px rgba(42, 114, 194, 0.5), inset 2px 2px 4px rgba(36, 103, 175, 0.75), inset -8px -8px 12px #1F68B8;
+        }
+    }
+
+    &.purple {
+        color: $white;
+        background: #AF7EA9;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), inset 2px 2px 4px rgba(147, 71, 137, 0.75), inset -8px -8px 12px rgba(147, 71, 137, 0.7);
+
+        &:hover {
+            background: #AF7EA9;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), inset 2px 2px 4px rgba(130, 53, 120, 0.75), inset -8px -8px 12px rgba(124, 44, 114, 0.7);
+        }
+    }
+
+    &.green {
+        color: $white;
+        background: #7FAE8C;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), inset 2px 2px 4px rgba(77, 135, 93, 0.6), inset -8px -8px 12px rgba(77, 135, 93, 0.75);
+
+        &:hover {
+            background: #7FAE8C;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), inset 2px 2px 4px rgba(49, 107, 65, 0.6), inset -8px -8px 12px rgba(49, 107, 65, 0.75);
+        }
+    }
+
+
+}
+
+
+
+
+
+.button:active {
+    animation: press 0.2s 1 linear;
+}
+
+@keyframes press {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.92);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.container {
+    display: flex;
+    width: 100%;
+
+    div {
+        height: auto;
+        width: 25%;
+        border-radius: 20px;
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 2em;
+
+        &.white {
+            background: $white;
+        }
+
+        &.blue {
+            background: $blue_gradient;
+        }
+
+        &.green {
+            background: $green_gradient;
+        }
+
+        &.purple {
+            background: $purple_gradient;
+        }
+    }
+}
