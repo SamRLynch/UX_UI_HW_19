@@ -1,117 +1,114 @@
 @import 'css_reset';
+@import 'variables_mixins';
 @import url('https://fonts.googleapis.com/css2?family=Aleo:wght@300;400;700&family=Courier+Prime&family=Lato:wght@400;700&display=swap');
-
-/* ----------------------------------------- */
-/* ---------------- Variables  ------------- */
-/* ----------------------------------------- */
-$header_font: 'Lato',
-sans-serif;
-$body_font: 'Aleo',
-serif;
-$code_font: 'Courier Prime',
-monospace;
-
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-}
-
-$white: #F5FBFF;
-$black: #000000;
-$blue: #4085D0;
-$light_blue: #64A5EE;
-$green: #61936F;
-$light_green: #7FAE8C;
-$purple: #92608C;
-$light_purple: #AF7EA9;
-$orange: #D07440;
-$light_orange: #EC8A53;
-$main_gradient: linear-gradient(105.44deg, #4085D0 0%, #7E4477 100%);
-$blue_gradient: linear-gradient(105.44deg, #4085D0 0%, #2A73C3 100%);
-$dark_blue_gradient: linear-gradient(96.82deg, #2D74C1 1.2%, #1762B3 100.89%);
-$green_gradient: linear-gradient(105.44deg, #61936F 0%, #478258 100%);
-$dark_green_gradient: linear-gradient(96.82deg, #447B54 1.2%, #2B683C 100.89%);
-$purple_gradient: linear-gradient(112.03deg, #92608C 0%, #7E4477 100%);
-$dark_purple_gradient: linear-gradient(96.82deg, #794273 1.2%, #65295E 100.89%);
-$orange_gradient: linear-gradient(105.44deg, #D07440 0%, #C2622C 100%);
-
-$code_gray: rgba(242, 242, 242, 1);
 
 
 body {
     background-color: #F5FBFF;
 }
 
+h1 {
+    font-family: $header-font;
+    font-weight: bold;
+    font-size: 48px;
+    text-align: center;
+    margin-top: 2em;
+}
+
+h2 {
+    font-family: $header-font;
+    font-size: 36px;
+    margin-top: 3em;
+
+}
+
+h3 {
+    font-family: $body-font;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 1.5em;
+    margin-top: 1em;
+}
+
+p {
+    font-family: $body_font;
+    font-weight: 300;
+    font-size: 16pt;
+    line-height: 20pt;
+    margin-bottom: 10pt;
+}
+
 a {
     text-decoration: none;
 }
 
+@media only screen and (max-width: 700px) {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+        text-align: center;
+    }
+}
+
+/* ----------------------------------------- */
+/* ---------------- Buttons ----------------- */
+/* ----------------------------------------- */
 .button {
     font-family: $header_font;
     font-size: 14pt;
     color: $black;
-    width: 220px;
-    height: 54px;
+    width: 12em;
     line-height: 54px;
     text-align: center;
     border-radius: 18px;
     margin: 0 auto;
     background: #FFFFFF;
-    box-shadow: 0px 10px 20px #99BDD5, inset 2px 2px 4px rgba(220, 233, 241, 0.75), inset -8px -8px 12px #DCE9F1;
+    box-shadow: $white_button_box_shadow;
     margin-bottom: 2em;
-    transition: all 0.3s ease 0s;
+    margin-top: 2em;
+    transition: all 0.3s ease;
+
     &:hover {
-    	box-shadow: 0px 10px 20px #99BDD5, inset 2px 2px 4px rgba(170, 197, 215, 0.75), inset -8px -8px 12px rgba(170, 197, 215, 0.7);
+        box-shadow: $white_button_hover_box_shadow;
     }
+
     &.blue {
         color: $white;
-        background: #64A5EE;
-        box-shadow: 0px 10px 20px rgba(37, 98, 167, 0.5), inset 2px 2px 4px rgba(64, 133, 208, 0.75), inset -8px -8px 12px #4085D0;
+        background: $light_blue;
+        box-shadow: $blue_button_box_shadow;
 
         &:hover {
-            background: linear-gradient(93.2deg, #64A5EE 3.44%, #64A5EE 100.8%);
-            box-shadow: 0px 10px 20px rgba(42, 114, 194, 0.5), inset 2px 2px 4px rgba(36, 103, 175, 0.75), inset -8px -8px 12px #1F68B8;
-        }
-
-        &.blue_02:hover {
-            background: linear-gradient(93.2deg, #4085D0 3.44%, #2A73C3 100.8%);
-            box-shadow: 0px 10px 20px rgba(42, 114, 194, 0.5), inset 2px 2px 4px rgba(36, 103, 175, 0.75), inset -8px -8px 12px #1F68B8;
+            box-shadow: $blue_button_hover_box_shadow;
         }
     }
 
     &.purple {
         color: $white;
-        background: #AF7EA9;
-        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), inset 2px 2px 4px rgba(147, 71, 137, 0.75), inset -8px -8px 12px rgba(147, 71, 137, 0.7);
+        background: $light_purple;
+        box-shadow: $purple_button_box_shadow;
 
-        &:hover {
-            background: #AF7EA9;
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), inset 2px 2px 4px rgba(130, 53, 120, 0.75), inset -8px -8px 12px rgba(124, 44, 114, 0.7);
+        &.purple:hover {
+            box-shadow: $purple_button_hover_box_shadow;
         }
     }
 
     &.green {
         color: $white;
-        background: #7FAE8C;
-        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), inset 2px 2px 4px rgba(77, 135, 93, 0.6), inset -8px -8px 12px rgba(77, 135, 93, 0.75);
+        background: $light_green;
+        box-shadow: $green_button_box_shadow;
 
-        &:hover {
-            background: #7FAE8C;
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), inset 2px 2px 4px rgba(49, 107, 65, 0.6), inset -8px -8px 12px rgba(49, 107, 65, 0.75);
+        &.green:hover {
+            box-shadow: $green_button_hover_box_shadow;
         }
     }
-
-
 }
 
-
-
-
-
-.button:active {
-    animation: press 0.2s 1 linear;
+.button:active,
+ul.navigation li:active {
+    animation: press 0.3s 1 linear;
 }
 
 @keyframes press {
@@ -128,32 +125,427 @@ a {
     }
 }
 
+input[type="submit"] {
+    font-family: $header_font;
+    font-size: 14pt;
+    color: $black;
+    line-height: 54px;
+    text-align: center;
+    border-radius: 18px;
+    margin: 0 auto;
+    color: $white;
+    background: $light_blue;
+    box-shadow: $blue_button_box_shadow;
+    margin-bottom: 2em;
+    transition: all 0.3s ease;
+    padding: 0.25em 3em;
+    border: none;
+
+    &:hover {
+        box-shadow: $blue_button_hover_box_shadow;
+    }
+}
+
+
 .container {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: space-evenly;
-    div {
-        height: auto;
-        width: 25%;
-        border-radius: 20px;
-        display: flex;
-        flex-flow: column nowrap;
-        padding: 2em;
+    margin-top: 3em;
 
-        &.white {
-            background: $white;
+    &.claymorphism {
+        div {
+            height: auto;
+            width: auto;
+            border-radius: 20px;
+            display: flex;
+            flex-flow: column nowrap;
+            padding: 1em;
+            margin-bottom: 2em;
+            color: $white;
+
+            h3 {
+                padding-left: 10%;
+                padding-right: 10%;
+            }
+
+            p {
+                text-align: center;
+                margin-bottom: 1em;
+                font-family: $body_font;
+            }
+
+            &.white {
+                background: $white;
+
+                p,
+                h3 {
+                    color: $black;
+                }
+            }
+
+            &.blue {
+                background: $blue_gradient;
+            }
+
+            &.green {
+                background: $green_gradient;
+            }
+
+            &.purple {
+                background: $purple_gradient;
+            }
         }
 
-        &.blue {
-            background: $blue_gradient;
+        .button {
+            font-family: $header_font;
+            font-size: 14pt;
+            color: $black;
+            width: 220px;
+            height: 54px;
+            line-height: 54px;
+            text-align: center;
+            border-radius: 18px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            box-shadow: 0px 10px 20px #99BDD5, inset 2px 2px 4px rgba(220, 233, 241, 0.75), inset -8px -8px 12px #DCE9F1;
+            margin-bottom: 2em;
+            transition: all 0.3s ease;
+
+            &:hover {
+                box-shadow: 0px 10px 20px #99BDD5, inset 2px 2px 4px rgba(170, 197, 215, 0.75), inset -8px -8px 12px rgba(170, 197, 215, 0.7);
+            }
+
+            &.blue {
+                color: $white;
+                background: $light_blue;
+                box-shadow: $blue_button_box_shadow;
+
+                &:hover {
+                    box-shadow: $blue_button_hover_box_shadow;
+                }
+
+                &.blue_02:hover {
+                    background: $blue_button_hover_02_background;
+                    box-shadow: $blue_button_hover_02_box_shadow;
+                }
+
+                &.blue_03:hover {
+                    background: $blue_button_hover_03_background;
+                    box-shadow: $blue_button_hover_03_box_shadow;
+                }
+            }
+
+            &.purple {
+                color: $white;
+                background: $light_purple;
+                box-shadow: $purple_button_box_shadow;
+
+                &:hover {
+                    box-shadow: $purple_button_hover_box_shadow;
+                }
+
+                &.purple_02:hover {
+                    background: $purple_button_hover_02_background;
+                    box-shadow: $purple_button_hover_02_box_shadow;
+                }
+            }
+
+            &.green {
+                color: $white;
+                background: $light_green;
+                box-shadow: $green_button_box_shadow;
+
+                &:hover {
+                    box-shadow: $green_button_hover_box_shadow;
+                }
+
+                &.green_02:hover {
+                    background: $green_button_hover_02_background;
+                    box-shadow: $green_button_hover_02_box_shadow;
+                }
+            }
         }
 
-        &.green {
-            background: $green_gradient;
+        .button:active {
+            animation: press 0.2s 1 linear;
         }
 
-        &.purple {
-            background: $purple_gradient;
+        @keyframes press {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(0.92);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+    }
+
+    &.neumorphism {
+
+        div {
+            height: auto;
+            width: auto;
+            border-radius: 20px;
+            display: flex;
+            flex-flow: column nowrap;
+            padding: 1em;
+            margin-bottom: 2em;
+            color: $black;
+            background-color: #F0F0F3;
+
+            p {
+                text-align: center;
+                margin-bottom: 1em;
+                font-family: $body_font;
+            }
+
+            .button {
+                font-family: $header_font;
+                font-size: 14pt;
+                color: $black;
+                width: 220px;
+                height: 54px;
+                line-height: 54px;
+                text-align: center;
+                border-radius: 18px;
+                margin: 0 auto;
+                margin-bottom: 2em;
+                transition: all 0.3s ease;
+
+                &.white {
+                    background: #F0F0F3;
+                    box-shadow: 10px 10px 10px rgba(174, 174, 192, 0.4), -10px -10px 30px rgba(255, 255, 255, 0.4), inset 10px 10px 10px #FFFFFF, inset -10px -10px 10px rgba(174, 174, 192, 0.25);
+
+                    &:hover {
+                        color: $white;
+                        background: #64A5EE;
+                        box-shadow: 10px 10px 10px rgba(174, 174, 192, 0.4), inset 10px 10px 10px #A3CBF9, inset -10px -10px 10px #4C92E1;
+                    }
+                }
+
+                &.white_02 {
+                    background: #F0F0F3;
+                    box-shadow: 10px 10px 30px rgba(174, 174, 192, 0.4), -10px -10px 30px #FFFFFF;
+
+                    &:hover {}
+                }
+            }
+        }
+    }
+
+
+    &.projects_div {
+
+        /* ----------------------------------------- */
+        /* ----------------- PROJECTS -------------- */
+        /* ----------------------------------------- */
+        div.project {
+            margin: 0 auto;
+            width: 100%;
+            height: auto;
+            transition: all ease-in 0.3s;
+
+            h2 {
+                margin-top: 0;
+                margin-bottom: 0.5em;
+                text-align: left;
+            }
+
+            .button {
+                margin: 0;
+            }
+
+            div.card {
+                @include blue_clay_card;
+                transition: all ease-in 0.3s;
+                padding: 5em;
+                display: flex;
+                position: relative;
+
+                div.project_text {
+                    color: $white;
+                    text-align: left;
+                    display: flex;
+                    flex-direction: column;
+                    width: 50%;
+
+                    p {
+                        margin-bottom: 2em;
+                    }
+                }
+
+                @media only screen and (max-width: 700px) {
+
+
+                    div.phone_02,
+                    div.phone_01 {}
+                }
+
+                /* ----------------- project images -------------- */
+                div.phone_02,
+                div.phone_01 {
+                    transition: all ease-in 0.3s;
+                    width: 14%;
+                    position: absolute;
+
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                    }
+                }
+
+                div.phone_01 {
+                    top: 0;
+                    right: 0;
+                }
+
+                div.phone_02 {
+                    top: -10%;
+                    right: 11%;
+                }
+
+                &:hover {
+                    div.phone_01 {
+                        right: 5px;
+                    }
+
+                    div.phone_02 {
+                        right: 10%;
+                    }
+                }
+
+                @media only screen and (max-width: 1200px) {
+
+                    div.phone_02,
+                    div.phone_01 {
+                        width: 22%;
+                    }
+
+                    div.phone_02 {
+                        right: 18%;
+                    }
+
+                    &:hover {
+                        div.phone_01 {
+                            right: 5px;
+                        }
+
+                        div.phone_02 {
+                            right: 17%;
+                        }
+                    }
+                }
+
+                @media only screen and (max-width: 990px) {
+
+                    div.phone_02,
+                    div.phone_01 {
+                        width: 27%;
+                    }
+
+                    div.phone_02 {
+                        right: 22%;
+                    }
+
+
+                    &:hover {
+                        div.phone_01 {
+                            right: 5px;
+                        }
+
+                        div.phone_02 {
+                            right: 21%;
+                        }
+                    }
+                }
+
+                @media only screen and (max-width: 700px) {
+                    flex-direction: column-reverse;
+
+                    div.project_text {
+                        width: 100%;
+                        margin-top: 75%;
+
+                        h2 {
+                            text-align: center;
+                        }
+                    }
+
+                    div.phone_02,
+                    div.phone_01 {
+                        width: 40%;
+                    }
+
+                    div.phone_02 {
+                        right: 43%;
+                    }
+
+                    div.phone_01 {
+                        top: -5%;
+                        right: 12%;
+                    }
+                }
+
+
+
+            }
+
+
+
+
+
+
+            &.case_study_02 {
+                margin-top: 6em;
+
+                div.card {
+                    @include purple_clay_card;
+
+                    div.phone_01 {
+                        width: 40%;
+                        top: -10%;
+                        right: 3%;
+                    }
+
+                    &:hover {
+                        div.phone_01 {
+                            width: 41%;
+                            right: 2%;
+                        }
+                    }
+
+                    @media only screen and (max-width: 700px) {
+                        div.phone_01 {
+                            width: 80%;
+                            right: 9%;
+                        }
+                    }
+                }
+
+
+
+
+
+            }
+
+            &.case_study_03 {
+                margin-top: 6em;
+
+                div.card {
+                    @include green_clay_card;
+
+                    &:hover {}
+                }
+
+
+            }
         }
     }
 }
