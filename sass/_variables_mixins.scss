@@ -201,6 +201,11 @@ inset -24px -24px 60px #A85425;
 
     @media (max-width: 990px) {
         box-shadow: $blue_clay_card_lg_box_shadow;
+
+        &:hover {
+            background: #3479C5;
+            box-shadow: $blue_clay_card_hover_lg_box_shadow;
+        }
     }
 
     @media (min-width: 990px) {
@@ -223,6 +228,11 @@ inset -24px -24px 60px #A85425;
 
     @media (max-width: 990px) {
         box-shadow: $purple_clay_card_lg_box_shadow;
+
+        &:hover {
+            background: #84517E;
+            box-shadow: $purple_clay_card_hover_lg_box_shadow;
+        }
     }
 
     @media (min-width: 990px) {
@@ -245,16 +255,23 @@ inset -24px -24px 60px #A85425;
 
     @media (max-width: 990px) {
         box-shadow: $green_clay_card_lg_box_shadow;
+
+        &:hover {
+            background: #50865F;
+            box-shadow: $green_clay_card_hover_lg_box_shadow;
+        }
     }
 
     @media (min-width: 990px) {
         box-shadow: $green_clay_card_xlg_box_shadow;
+
+        &:hover {
+            background: #50865F;
+            box-shadow: $green_clay_card_hover_xlg_box_shadow;
+        }
     }
 
-    &:hover {
-        background: #50865F;
-        box-shadow: $green_clay_card_hover_xlg_box_shadow;
-    }
+
 }
 
 @mixin orange_clay_card {

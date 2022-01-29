@@ -350,7 +350,6 @@ input[type="submit"] {
             margin: 0 auto;
             width: 100%;
             height: auto;
-            transition: all ease-in 0.3s;
 
             h2 {
                 margin-top: 0;
@@ -368,6 +367,7 @@ input[type="submit"] {
                 padding: 5em;
                 display: flex;
                 position: relative;
+            transition: all ease-in 0.3s;
 
                 div.project_text {
                     color: $white;
@@ -492,18 +492,10 @@ input[type="submit"] {
                         right: 12%;
                     }
                 }
-
-
-
             }
 
-
-
-
-
-
             &.case_study_02 {
-                margin-top: 6em;
+                margin-top: 10em;
 
                 div.card {
                     @include purple_clay_card;
@@ -536,7 +528,7 @@ input[type="submit"] {
             }
 
             &.case_study_03 {
-                margin-top: 6em;
+                margin-top: 10em;
 
                 div.card {
                     @include green_clay_card;
